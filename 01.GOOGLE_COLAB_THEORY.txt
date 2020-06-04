@@ -1,0 +1,58 @@
+GOOGLE COLAB :;
+
+1.Change run time:
+Runtime >chnage runtime type > select GPU 
+
+
+2.By default google colab will create files in drive/colab_notebooks
+
+
+3. To test whether GPU is working fine 
+   import tensorflow as tf 
+   tf.test.gpu_device_name()
+    
+   output:
+   '/device:GPU:0'
+
+4.To see device types i.e GPU details 
+  from tensorflow.python.client import device_lib
+  device_lib.list_local_devices()
+  Output is 
+  [name: "/device:CPU:0"
+ device_type: "CPU"
+ memory_limit: 268435456
+ locality {
+ }
+ incarnation: 3763388557219612667, name: "/device:XLA_CPU:0"
+ device_type: "XLA_CPU"
+ memory_limit: 17179869184
+ locality {
+ }
+ incarnation: 7756211035689343556
+ physical_device_desc: "device: XLA_CPU device", name: "/device:XLA_GPU:0"
+ device_type: "XLA_GPU"
+ memory_limit: 17179869184
+ locality {
+ }
+ incarnation: 9240755314672475213
+ physical_device_desc: "device: XLA_GPU device", name: "/device:GPU:0"
+ device_type: "GPU"
+ memory_limit: 14648777152
+ locality {
+   bus_id: 1
+   links {
+   }
+ }
+ incarnation: 14171324938650191384
+ physical_device_desc: "device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5"]
+ 
+ So it is a NVIDIA Tesla T4 GPU with 17 GB memory XLA_GPU 
+
+5.!cat /proc/meminfo
+for memory information 
+6.!cat /proc/cpuinfo 
+for cpu informmation 
+7.Go to files and mout drive 
+
+8. To work with any new data set 
+In google colab  uploading a new file will upload in colab note book then start working 
